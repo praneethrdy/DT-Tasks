@@ -6,15 +6,13 @@ This API is designed to optimize the routing of containers, providing a more eff
 
 This project leverages **Spring Boot** for building a robust and scalable backend API.
 
-
-
 ## Technologies Used
 
 - **Java 17**: The latest version of Java to ensure security and modern language features.
 - **Spring Boot**: For creating the RESTful API.
 - **Maven**: To manage dependencies and the build process.
 
-
+---
 
 ## Endpoints
 
@@ -24,7 +22,7 @@ This is the core endpoint. It receives a JSON body with the container and destin
 
 #### Request Format:
 
-json
+```json
 {
   "containers": [1, 2, 3],
   "destinations": [101, 102, 103],
@@ -34,7 +32,7 @@ json
     [4.0, 8.2, 2.1]
   ]
 }
-
+```
 
 - **containers**: The list of container IDs.
 - **destinations**: The list of destination IDs.
@@ -42,7 +40,7 @@ json
 
 #### Response Format:
 
-json
+```json
 [
     {
         "container": 1,
@@ -57,16 +55,15 @@ json
         "destination": 101
     }
 ]
-
+```
 
 - **container**: The ID of the container being moved.
 - **destination**: The ID of the destination where the container is moved.
 
 #### Example Latency Output:
+```
 Latency: 3.567 ms
-
-
-
+```
 
 ## Getting Started
 
@@ -74,8 +71,9 @@ To get the project running locally, follow these steps:
 
 1. **Clone the Repository**:
 
+   ```
    git clone https://github.com/praneethrdy/container-routing-api.git
-   
+   ```
 
 2. **Open the Project** in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
 
@@ -103,7 +101,7 @@ To get the project running locally, follow these steps:
 **Response**:  
 The API will respond with an optimized route plan, like so:
 
-json
+```json
 [
     {
         "container": 1,
@@ -118,11 +116,11 @@ json
         "destination": 101
     }
 ]
-
-
+```
 
 ## Folder Structure
 
+```
 src/
  └── main/
       └── java/
@@ -138,8 +136,5 @@ src/
                           │     └── RoutingController.java
                           └── ContainerRoutingApiApplication.java
  └── pom.xml
+```
 
-
-## Conclusion
-
-With this API, we can efficiently calculate the optimal routes for container movement, helping to save time and reduce costs. The API is designed to handle large datasets and is easy to integrate into existing logistics management systems.
